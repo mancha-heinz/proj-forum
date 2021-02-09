@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Usuarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="titulo" [(ngModel)]="usuario.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="assunto" [(ngModel)]="usuario.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input required type="text" placeholder="titulo" [(ngModel)]="usuario.senha"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveUsuario()">Salvar</ion-button>
+</ion-content>

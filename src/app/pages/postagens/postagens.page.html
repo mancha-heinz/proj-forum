@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Postagens</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-input required type="text" placeholder="titulo" [(ngModel)]="postagem.titulo"></ion-input>
+    </ion-item>
+    <!--<ion-item>
+      <ion-input required type="text" placeholder="assunto" [(ngModel)]="postagem.assunto"></ion-input>
+    </ion-item>-->
+    <ion-item>
+      <ion-select value="brown" okText="Okay" cancelText="Cancelar" [(ngModel)]="postagem.categoria">
+        <ion-select-option *ngFor="let categoria of categorias">{{ categoria.titulo }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <!--<ion-input required type="text" placeholder="titulo" [(ngModel)]="postagem.texto"></ion-input>-->
+      <ion-textarea required type="text" placeholder="descricao" [(ngModel)]="postagem.texto"></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="savePostagem()">Salvar</ion-button>
+</ion-content>

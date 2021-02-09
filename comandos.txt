@@ -1,0 +1,30 @@
+**Instalar ferramenta firebase  via linha de comando
+npm install -g firebase-tools
+
+**adicionar pwa ao projeto
+
+npm install -g @angular/cli
+
+ng add @angular/pwa
+
+
+** gerar pwa
+ionic build --prod --service-worker
+
+npm install -g firebase-tools
+
+firebase login
+
+** fazer deploy da app no firebase
+firebase init   
+-- responder yes na primeira pergunta
+- hosting
+-- quando perguntar sobre a pasta public: digitar www no lugar de public
+-- responder NO nas duas últimas perguntas
+
+firebase deploy
+
+npm install firebase angularfire2
+
+ionic g page pages/todoDetails
+ionic g service services/todo

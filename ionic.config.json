@@ -1,0 +1,7 @@
+{
+  "name": "proj-forum",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
