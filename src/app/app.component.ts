@@ -32,6 +32,11 @@ export class AppComponent {
       title: 'Categorias',
       url: '/categorias',
       icon: 'book'
+    },
+    {
+      title: 'Imagens',
+      url: '/imagens',
+      icon: 'camera'
     }
   ];
 

@@ -31,6 +31,21 @@ const routes: Routes = [
   { path: 'categorias', loadChildren: './pages/categorias/categorias.module#CategoriasPageModule' },
   { path: '', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
+
+  //imagens
+  { path: 'imagens/:id', loadChildren: './pages/imagens/imagens.module#ImagensPageModule' },  
+  { path: 'imagens', loadChildren: './pages/imagens/imagens.module#ImagensPageModule' },
+  { path: '', loadChildren: './login/login.module#LoginPageModule' },
+  {
+    path: 'imagens',
+    loadChildren: () => import('./pages/imagens/imagens.module').then( m => m.ImagensPageModule)
+  },
+  //{ path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
+
+  /*{
+    path: 'imagens',
+    loadChildren: () => import('./pages/imagens/imagens.module').then( m => m.ImagensPageModule)
+  },*/
   /*{
     path: 'categorias',
     loadChildren: () => import('./pages/categorias/categorias.module').then( m => m.CategoriasPageModule)

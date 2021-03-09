@@ -4,6 +4,10 @@ import { ActivatedRoute } from '@angular/router';
 import { NavController, LoadingController } from '@ionic/angular';
 import { CategoriasService } from 'src/app/services/categorias.service';
 import { Categoria } from './../../services/categorias.service'
+import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
+import { AngularFirestore, AngularFirestoreCollection } from 'angularfire2/firestore';
+import { finalize } from 'rxjs/operators'; //img
 
 @Component({
   selector: 'app-postagens',
@@ -12,11 +16,14 @@ import { Categoria } from './../../services/categorias.service'
 })
 export class PostagensPage implements OnInit {
 
-  postagem: Postagem = {
+  postagem: Postagem = { //cria obj postagem
     titulo: "",
     assunto: "",
     texto: "",
-    categoria: "" //refere as cadegorias
+    categoria: "", //refere as cadegorias
+    //name: "", //img
+    //filepath: "", //img
+    //size: 0 //img
   }
 
   postagemId = null;
@@ -28,7 +35,9 @@ export class PostagensPage implements OnInit {
     private postagemService: PostagensService,
     private loading: LoadingController,
     private categoriaService: CategoriasService
-  ) { }
+  ) { 
+  
+  }
 
   ngOnInit() {
     this.postagemId = this.route.snapshot.params['id'];
@@ -74,5 +83,5 @@ export class PostagensPage implements OnInit {
     this.categoriaService.getTodos().subscribe(res => {
       this.categorias = res;
     })
-  }*/
+  }*/  
 }

@@ -18,6 +18,8 @@ import { AuthenticationService } from './services/authentication.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AngularFireStorageModule } from '@angular/fire/storage'; //img
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -25,7 +27,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'my-app-name'), //importa tudo q. firebase/app precisa
+    AngularFirestoreModule, //imports firebase/firestore, only needed for database features
+    AngularFireStorageModule, //imports firebase/storage only needed for storage features
     AngularFirestoreModule,
     AngularFireAuthModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),

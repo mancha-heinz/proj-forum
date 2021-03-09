@@ -10,14 +10,13 @@ export interface Postagem {
   titulo: string,
   assunto: string,
   texto: string,
-  categoria: string //refere as cadegorias
+  categoria: string //refere as categorias
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostagensService {
-
   private postagensCollection: AngularFirestoreCollection<Postagem>
   private postagens: Observable<Postagem[]>
   private categorias: Observable<Categoria[]> //refere as cadegorias
